@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Garhwal Hardware Store - Your trusted partner for quality hardware & building materials since 1998. PVC Pipes, Water Tanks, Plumbing, Electrical, Nerolac Paints in Ara, Bihar.">
+  <meta name="keywords" content="hardware store, building materials, PVC pipes, water tanks, plumbing, electrical, Nerolac paints, Ara, Bihar, Bhojpur">
+  <meta name="author" content="Garhwal Hardware Store">
+  <meta name="theme-color" content="#030712">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>">
+  <meta property="og:title" content="Garhwal Hardware Store - Premium Hardware & Building Materials">
+  <meta property="og:description" content="Quality hardware & building materials since 1998. Ara (Bhojpur), Bihar.">
+  <meta property="og:type" content="website">
+  <title>Garhwal Hardware Store | Premium Hardware & Building Materials - Ara, Bihar</title>
+
+  <!-- PWA & Service Worker -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Garhwal Hardware">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload critical hero image -->
+  <link rel="preload" as="image" href="/images/hero.webp" type="image/webp" fetchpriority="high">
+  
+  <!-- Only the font weights actually used -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Inline Critical CSS for above-the-fold content -->
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --neon-cyan: #06b6d4;
+      --neon-gold: #ffb703;
+      --neon-green: #10b981;
+    }
+    body {
+      margin: 0;
+      background-color: var(--bg-deep);
+      overflow-x: hidden;
+    }
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      background: #02040a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+    }
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.35s ease, visibility 0.35s;
+    }
+    .loader {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader-ring {
+      position: absolute;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      animation: loaderSpin 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+    .loader-ring:nth-child(1) {
+      width: 130px; height: 130px;
+      border-top-color: var(--neon-cyan);
+      animation-duration: 1.2s;
+    }
+    .loader-ring:nth-child(2) {
+      width: 100px; height: 100px;
+      border-right-color: var(--neon-gold);
+      animation-duration: 1.6s;
+      animation-direction: reverse;
+    }
+    .loader-ring:nth-child(3) {
+      width: 70px; height: 70px;
+      border-bottom-color: var(--neon-green);
+      animation-duration: 2s;
+    }
+    .loader-text {
+      font-size: 2.2rem;
+      animation: pulseNeon 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes loaderSpin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulseNeon {
+      0% { transform: scale(0.9); }
+      100% { transform: scale(1.1); }
+    }
+  </style>
+
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HardwareStore",
+    "name": "Garhwal Hardware Store",
+    "image": "https://garhwalhardware.com/images/hero.webp",
+    "telephone": "+919682558068",
+    "url": "https://garhwalhardware.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ara - Sasaram Main Road, Udwantnagar",
+      "addressLocality": "Ara",
+      "addressRegion": "Bihar",
+      "postalCode": "802210",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.5432,
+      "longitude": 84.6653
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    ],
+    "sameAs": [
+      "https://wa.me/919682558068"
+    ]
+  }
+  </script>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <span>✦</span>
+    <span>1998 से आरा, उदवंतनगर और आसपास के गाँवों में सेवा</span>
+    <a href="https://maps.google.com/maps?cid=5774004426147478906" target="_blank" rel="noopener">दुकान पर आएँ →</a>
+  </div>
+
+  <!-- Tech Grid Background & Ambient Glows -->
+  <div class="cyber-grid"></div>
+  <div class="glow-sphere sphere-1"></div>
+  <div class="glow-sphere sphere-2"></div>
+
+  <!-- Floating Ambient Particles -->
+  <div class="ambient-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loader">
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <div class="loader-ring"></div>
+      <span class="loader-text">🏪</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="mainHeader">
+    <div class="header-left">
+      <div class="header-logo" onclick="navigate('home')" style="cursor:pointer">
+        <span class="logo-icon">🏪</span>
+        <div>
+          <div class="header-title">Garhwal Hardware</div>
+          <div class="header-sub">Ara (Bhojpur), Bihar</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="header-nav" id="headerNav">
+      <a class="nav-link active" data-page="home" href="#">
+        <span>होम</span>
+      </a>
+      <a class="nav-link" data-page="products" href="#">
+        <span>उत्पाद</span>
+      </a>
+      <a class="nav-link" data-page="categories" href="#">
+        <span>श्रेणियाँ</span>
+      </a>
+      <a class="nav-link" data-page="about" href="#">
+        <span>हमारे बारे में</span>
+      </a>
+      <a class="nav-link" data-page="contact" href="#">
+        <span>संपर्क</span>
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="langToggle" class="lang-btn magnetic" onclick="toggleLang()" aria-label="Toggle Language">EN</button>
+      <a class="header-call-btn magnetic" href="tel:+919682558068" aria-label="Call Us">
+        <span class="pulse-dot"></span>
+        📞
+      </a>
+      <!-- Hamburger Toggle Button -->
+      <button id="menuToggle" class="menu-toggle-btn magnetic" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <nav class="drawer-nav">
+      <a class="nav-link active" data-page="home" href="#">
+        <span class="nav-icon">🏠</span>
+        <span>होम</span>
+      </a>
+      <a class="nav-link" data-page="products" href="#">
+        <span class="nav-icon">📦</span>
+        <span>उत्पाद</span>
+      </a>
+      <a class="nav-link" data-page="categories" href="#">
+        <span class="nav-icon">📂</span>
+        <span>श्रेणियाँ</span>
+      </a>
+      <a class="nav-link" data-page="about" href="#">
+        <span class="nav-icon">ℹ️</span>
+        <span>हमारे बारे में</span>
+      </a>
+      <a class="nav-link" data-page="contact" href="#">
+        <span class="nav-icon">📞</span>
+        <span>संपर्क</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main id="app"></main>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn magnetic" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- WhatsApp Floating Button -->
+  <a id="whatsappFab" class="whatsapp-fab magnetic" href="https://wa.me/919682558068" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.128 6.744 3.046 9.378L1.054 31.2l6.038-1.942A15.91 15.91 0 0016.004 32C24.826 32 32 24.824 32 16.004 32 7.176 24.826 0 16.004 0zm9.35 22.614c-.396 1.116-2.31 2.076-3.222 2.148-.816.066-1.822.294-5.898-1.266-4.926-1.884-8.064-6.906-8.31-7.224-.24-.318-1.962-2.61-1.962-4.98 0-2.37 1.242-3.54 1.686-4.026.444-.486 0.966-.606 1.29-.606s.648.006.93.018c.3.012.702-.114 1.098.834.396.954 1.35 3.288 1.47 3.528.12.24.198.522.036.84-.162.318-.24.516-.48.792-.24.276-.504.618-.72.828-.24.234-.486.486-.21.954.276.468 1.23 2.028 2.64 3.288 1.818 1.62 3.348 2.124 3.822 2.364.474.24.75.198 1.026-.12.276-.318 1.182-1.38 1.5-1.854.312-.474.636-.396 1.068-.234.432.162 2.766 1.302 3.24 1.542.474.24.792.36.906.558.12.198.12 1.146-.276 2.262z"/></svg>
+    <span class="fab-tooltip">हमसे चैट करें!</span>
+  </a>
+
+  <!-- Product Quick View Lightbox Modal -->
+  <div id="quickViewModal" class="quick-view-modal" aria-hidden="true" aria-modal="true" aria-labelledby="quickViewTitle" role="dialog">
+    <div class="modal-overlay" onclick="closeQuickView()"></div>
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeQuickView()" aria-label="Close dialog">✕</button>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Entry Script for Vite -->
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
